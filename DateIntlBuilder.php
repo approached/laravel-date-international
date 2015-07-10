@@ -1,5 +1,6 @@
 <?php namespace Approached\LaravelDateInternational;
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Traits\Macroable;
 use IntlDateFormatter;
@@ -19,21 +20,21 @@ class DateIntlBuilder
         $this->langCode = $lang . '_' . strtoupper($lang);
     }
 
-    public function date($type, \Carbon\Carbon $carbon)
+    public function date($type, Carbon $carbon)
     {
         $fmt = new IntlDateFormatter($this->langCode, $this->getType($type), IntlDateFormatter::NONE);
 
         return $fmt->format($carbon->getTimestamp());
     }
 
-    public function time($type, \Carbon\Carbon $carbon)
+    public function time($type, Carbon $carbon)
     {
         $fmt = new IntlDateFormatter($this->langCode, IntlDateFormatter::NONE, $this->getType($type));
 
         return $fmt->format($carbon->getTimestamp());
     }
 
-    public function full($type, \Carbon\Carbon $carbon)
+    public function full($type, Carbon $carbon)
     {
         $type = $this->getType($type);
         $fmt = new IntlDateFormatter($this->langCode, $type, $type);
@@ -41,7 +42,7 @@ class DateIntlBuilder
         return $fmt->format($carbon->getTimestamp());
     }
 
-    public function fullmix($dateType, $timeType, \Carbon\Carbon $carbon)
+    public function fullmix($dateType, $timeType, Carbon $carbon)
     {
         $fmt = new IntlDateFormatter($this->langCode, $this->getType($dateType), $this->getType($timeType));
 
