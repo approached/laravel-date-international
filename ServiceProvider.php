@@ -1,8 +1,8 @@
 <?php namespace Approached\LaravelDateInternational;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as Provider;
 
-class DateIntlServiceProvider extends ServiceProvider
+class ServiceProvider extends Provider
 {
 
     /**

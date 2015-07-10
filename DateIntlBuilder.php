@@ -48,11 +48,6 @@ class DateIntlBuilder
         return $fmt->format($carbon->getTimestamp());
     }
 
-    public function date_intl($type, \Carbon\Carbon $carbon)
-    {
-        var_dump(234);
-    }
-
     private function getType($type)
     {
         $types = array(

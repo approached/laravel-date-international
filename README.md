@@ -129,7 +129,12 @@ and
     {{ dateintl_full('full', $date) }}<br>
     {{ dateintl_full('gregorian', $date) }}<br>
     {{ dateintl_full('traditional', $date) }}<br>
-```    
+```
+
+**PHP:**
+```
+$str = Dateintl::full('short', $date);
+```
 
 ## License
 MIT
