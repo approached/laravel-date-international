@@ -1,5 +1,9 @@
 # Laravel Imageoptimizer
 
+[![License](https://poser.pugx.org/approached/laravel-date-international/license)](https://packagist.org/packages/approached/laravel-date-international)
+[![Latest Stable Version](https://poser.pugx.org/approached/laravel-date-international/v/stable)](https://packagist.org/packages/approached/laravel-date-international)
+[![Total Downloads](https://poser.pugx.org/approached/laravel-date-international/downloads)](https://packagist.org/packages/approached/laravel-date-international)
+
 With this package you can get easy language date formated string in your language.
 
 ## Demo
