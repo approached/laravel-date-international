@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('date_intl')) {
+if (!function_exists('dateintl')) {
 
     /**
      * Generate a international date string
@@ -9,7 +9,7 @@ if (!function_exists('date_intl')) {
      * @param $dateObject
      * @return string
      */
-    function date_intl($type, $dateObject)
+    function dateintl($type, $dateObject)
     {
         return app('dateintl')->date_intl($type, $dateObject);
     }

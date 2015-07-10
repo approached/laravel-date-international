@@ -7,6 +7,7 @@
     "date",
     "manipulator",
     "international",
+    "intl",
     "laravel"
   ],
   "homepage": "https://github.com/approached/laravel-date-international",
@@ -30,6 +31,8 @@
     "files": [
       "helpers.php"
     ]
-    ]
+  },
+  "suggest": {
+    "ext-intl": "to use the component with locales other than \"en\""
   }
 }

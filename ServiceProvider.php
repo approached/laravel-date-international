@@ -19,7 +19,7 @@ class DateIntlServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerHtmlBuilder();
+        $this->registerDateIntlBuilder();
         $this->app->alias('dateintl', 'Approached\LaravelDateInternational\DateIntlBuilder');
     }
 
@@ -31,7 +31,7 @@ class DateIntlServiceProvider extends ServiceProvider
     protected function registerDateIntlBuilder()
     {
         $this->app->bindShared('dateintl', function ($app) {
-            return new HtmlBuilder($app['url']);
+            return new DateIntlBuilder();
         });
     }
 

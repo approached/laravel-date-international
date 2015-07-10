@@ -29,13 +29,22 @@ Check your available languages:
 ```
 locale -a
 ```
-Make sure that you have languages in format like this: de_DE or en_IN
+Make sure that you have languages in format like this: de_DE
 
 ### Laravel
 
 Laravel require this package with composer:
 ```
 composer require approached/laravel-date-international
+```
+
+After updating composer, add the ServiceProvider to the providers array in config/app.php
+```
+'Approached\LaravelDateInternational\ServiceProvider',
+
+and
+
+'Dateintl'=> 'Approached\LaravelDateInternational\DateIntlFacade',
 ```
 
 // TODO some points

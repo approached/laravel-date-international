@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Traits\Macroable;
+use IntlDateFormatter;
 
 class DateIntlBuilder
 {
