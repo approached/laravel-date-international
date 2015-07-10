@@ -1,9 +1,62 @@
 # Laravel Imageoptimizer
 
-With this package you can get easy language date formated string.
+With this package you can get easy language date formated string in your language.
 
 ## Demo
-// TODO
+
+**German:**
+```
+Date:
+10.07.15
+10.07.2015
+10. Juli 2015
+Freitag, 10. Juli 2015
+10. Juli 2015
+Freitag, 10. Juli 2015
+
+Time:
+14:23
+14:23:27
+14:23:27 GMT
+14:23:27 GMT
+14:23:27 GMT
+14:23:27 GMT
+
+Full:
+10.07.15 14:23
+10.07.2015 14:23:27
+10. Juli 2015 14:23:27 GMT
+Freitag, 10. Juli 2015 14:23:27 GMT
+10. Juli 2015 14:23:27 GMT
+Freitag, 10. Juli 2015 14:23:27 GMT
+```
+
+**Spanish:**
+```
+Date:
+10/7/15
+10/7/2015
+10 de julio de 2015
+viernes, 10 de julio de 2015
+10 de julio de 2015
+viernes, 10 de julio de 2015
+
+Time:
+14:24
+14:24:48
+14:24:48 GMT
+14:24:48 (GMT)
+14:24:48 GMT
+14:24:48 (GMT)
+
+Full:
+10/7/15 14:24
+10/7/2015 14:24:48
+10 de julio de 2015, 14:24:48 GMT
+viernes, 10 de julio de 2015, 14:24:48 (GMT)
+10 de julio de 2015, 14:24:48 GMT
+viernes, 10 de julio de 2015, 14:24:48 (GMT)
+```
 
 ## Installation
 
@@ -47,7 +100,36 @@ and
 'Dateintl'=> 'Approached\LaravelDateInternational\DateIntlFacade',
 ```
 
-// TODO some points
+## Usage
+
+**Blade:**
+```
+    Date:<br>
+    {{ dateintl_date('short', $date) }}<br>
+    {{ dateintl_date('medium', $date) }}<br>
+    {{ dateintl_date('long', $date) }}<br>
+    {{ dateintl_date('full', $date) }}<br>
+    {{ dateintl_date('gregorian', $date) }}<br>
+    {{ dateintl_date('traditional', $date) }}<br>
+
+    <br><br>
+    Time:<br>
+    {{ dateintl_time('short', $date) }}<br>
+    {{ dateintl_time('medium', $date) }}<br>
+    {{ dateintl_time('long', $date) }}<br>
+    {{ dateintl_time('full', $date) }}<br>
+    {{ dateintl_time('gregorian', $date) }}<br>
+    {{ dateintl_time('traditional', $date) }}<br>
+
+    <br><br>
+    Full:<br>
+    {{ dateintl_full('short', $date) }}<br>
+    {{ dateintl_full('medium', $date) }}<br>
+    {{ dateintl_full('long', $date) }}<br>
+    {{ dateintl_full('full', $date) }}<br>
+    {{ dateintl_full('gregorian', $date) }}<br>
+    {{ dateintl_full('traditional', $date) }}<br>
+```    
 
 ## License
 MIT
