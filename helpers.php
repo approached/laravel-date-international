@@ -25,9 +25,9 @@ if (!function_exists('dateintl_time')) {
      * @param $dateObject
      * @return string
      */
-    function dateintl_time($type, $dateObject)
+    function dateintl_time($dateObject, $withSeconds = false)
     {
-        return app('dateintl')->time($type, $dateObject);
+        return app('dateintl')->time($dateObject, $withSeconds);
     }
 }
 
@@ -40,9 +40,9 @@ if (!function_exists('dateintl_full')) {
      * @param $dateObject
      * @return string
      */
-    function dateintl_full($type, $dateObject)
+    function dateintl_full($type, $dateObject, $withSeconds = false)
     {
-        return app('dateintl')->full($type, $dateObject);
+        return app('dateintl')->full($type, $dateObject, $withSeconds);
     }
 }
 

@@ -11,55 +11,77 @@ With this package you can get easy formated date sting in your language.
 **German:**
 ```
 Date:
-10.07.15
-10.07.2015
-10. Juli 2015
-Freitag, 10. Juli 2015
-10. Juli 2015
-Freitag, 10. Juli 2015
+20.08.15
+20.08.2015
+20. August 2015
+Donnerstag, 20. August 2015
 
 Time:
-14:23
-14:23:27
-14:23:27 GMT
-14:23:27 GMT
-14:23:27 GMT
-14:23:27 GMT
+13:21
+13:21:54 (with seconds)
 
 Full:
-10.07.15 14:23
-10.07.2015 14:23:27
-10. Juli 2015 14:23:27 GMT
-Freitag, 10. Juli 2015 14:23:27 GMT
-10. Juli 2015 14:23:27 GMT
-Freitag, 10. Juli 2015 14:23:27 GMT
+20.08.15 13:21
+20.08.2015 13:21
+20. August 2015 13:21
+Donnerstag, 20. August 2015 13:21
+```
+
+**Italy:**
+```
+ Date:
+20/08/15
+20/ago/2015
+20 agosto 2015
+giovedì 20 agosto 2015
+
+Time:
+13:26
+13:26:36 (with seconds)
+
+Full:
+20/08/15 13:26
+20/ago/2015 13:26
+20 agosto 2015 13:26
+giovedì 20 agosto 2015 13:26:36 (with seconds)
+```
+
+**English:**
+```
+Date:
+8/20/15
+Aug 20, 2015
+August 20, 2015
+Thursday, August 20, 2015
+
+Time:
+1:25 PM
+1:25:28 PM (with seconds)
+
+Full:
+8/20/15, 1:25 PM
+Aug 20, 2015, 1:25 PM
+August 20, 2015 at 1:25 PM
+Thursday, August 20, 2015 at 1:25:28 PM (with seconds)
 ```
 
 **Spanish:**
 ```
 Date:
-10/7/15
-10/7/2015
-10 de julio de 2015
-viernes, 10 de julio de 2015
-10 de julio de 2015
-viernes, 10 de julio de 2015
+20/8/15
+20/8/2015
+20 de agosto de 2015
+jueves, 20 de agosto de 2015
 
 Time:
-14:24
-14:24:48
-14:24:48 GMT
-14:24:48 (GMT)
-14:24:48 GMT
-14:24:48 (GMT)
+13:27
+13:27:42 (with seconds)
 
 Full:
-10/7/15 14:24
-10/7/2015 14:24:48
-10 de julio de 2015, 14:24:48 GMT
-viernes, 10 de julio de 2015, 14:24:48 (GMT)
-10 de julio de 2015, 14:24:48 GMT
-viernes, 10 de julio de 2015, 14:24:48 (GMT)
+20/8/15 13:27
+20/8/2015 13:27
+20 de agosto de 2015, 13:27
+jueves, 20 de agosto de 2015, 13:27:42 (with seconds)
 ```
 
 ## Installation
@@ -121,27 +143,17 @@ and
     {{ dateintl_date('short', $date) }}<br>
     {{ dateintl_date('medium', $date) }}<br>
     {{ dateintl_date('long', $date) }}<br>
-    {{ dateintl_date('full', $date) }}<br>
-    {{ dateintl_date('gregorian', $date) }}<br>
-    {{ dateintl_date('traditional', $date) }}<br>
+    {{ dateintl_date('full', $date) }}<br><br>
 
-    <br><br>
     Time:<br>
-    {{ dateintl_time('short', $date) }}<br>
-    {{ dateintl_time('medium', $date) }}<br>
-    {{ dateintl_time('long', $date) }}<br>
-    {{ dateintl_time('full', $date) }}<br>
-    {{ dateintl_time('gregorian', $date) }}<br>
-    {{ dateintl_time('traditional', $date) }}<br>
+    {{ dateintl_time($date) }}<br>
+    {{ dateintl_time($date, true) }} (with seconds)<br><br>
 
-    <br><br>
     Full:<br>
     {{ dateintl_full('short', $date) }}<br>
     {{ dateintl_full('medium', $date) }}<br>
     {{ dateintl_full('long', $date) }}<br>
-    {{ dateintl_full('full', $date) }}<br>
-    {{ dateintl_full('gregorian', $date) }}<br>
-    {{ dateintl_full('traditional', $date) }}<br>
+    {{ dateintl_full('full', $date, true) }}  (with seconds)<br>
 ```
 
 **PHP:**

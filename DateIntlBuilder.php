@@ -27,28 +27,6 @@ class DateIntlBuilder
         return $fmt->format($carbon->getTimestamp());
     }
 
-    public function time($type, Carbon $carbon)
-    {
-        $fmt = new IntlDateFormatter($this->langCode, IntlDateFormatter::NONE, $this->getType($type));
-
-        return $fmt->format($carbon->getTimestamp());
-    }
-
-    public function full($type, Carbon $carbon)
-    {
-        $type = $this->getType($type);
-        $fmt = new IntlDateFormatter($this->langCode, $type, $type);
-
-        return $fmt->format($carbon->getTimestamp());
-    }
-
-    public function fullmix($dateType, $timeType, Carbon $carbon)
-    {
-        $fmt = new IntlDateFormatter($this->langCode, $this->getType($dateType), $this->getType($timeType));
-
-        return $fmt->format($carbon->getTimestamp());
-    }
-
     private function getType($type)
     {
         $types = array(
@@ -65,6 +43,37 @@ class DateIntlBuilder
         }
 
         throw new \Exception($type . ' ... TYPE not found');
+    }
+
+    public function time(Carbon $carbon, $withSeconds = false)
+    {
+        $fmt = new IntlDateFormatter($this->langCode, IntlDateFormatter::NONE, $this->getTimeType($withSeconds));
+
+        return $fmt->format($carbon->getTimestamp());
+    }
+
+    private function getTimeType($withSeconds)
+    {
+        if ($withSeconds) {
+            return IntlDateFormatter::MEDIUM;
+        }
+
+        return IntlDateFormatter::SHORT;
+    }
+
+    public function full($type, Carbon $carbon, $withSeconds = false)
+    {
+        $type = $this->getType($type);
+        $fmt = new IntlDateFormatter($this->langCode, $type, $this->getTimeType($withSeconds));
+
+        return $fmt->format($carbon->getTimestamp());
+    }
+
+    public function fullmix($dateType, $timeType, Carbon $carbon)
+    {
+        $fmt = new IntlDateFormatter($this->langCode, $this->getType($dateType), $this->getType($timeType));
+
+        return $fmt->format($carbon->getTimestamp());
     }
 
 }
