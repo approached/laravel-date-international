@@ -29,7 +29,7 @@ Donnerstag, 20. August 2015 13:21
 
 **Italy:**
 ```
- Date:
+Date:
 20/08/15
 20/ago/2015
 20 agosto 2015
@@ -117,7 +117,8 @@ Laravel require this package with composer:
 composer require approached/laravel-date-international
 ```
 
-After updating composer, add the ServiceProvider to the providers array in config/app.php
+After updating composer, add the ServiceProvider to the providers array in config/app.php:
+
 Laravel 5.1:
 ```
 Approached\LaravelDateInternational\ServiceProvider::class,
