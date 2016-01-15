@@ -30,7 +30,7 @@ class ServiceProvider extends Provider
      */
     protected function registerDateIntlBuilder()
     {
-        $this->app->bindShared('dateintl', function ($app) {
+        $this->app->singleton('dateintl', function ($app) {
             return new DateIntlBuilder();
         });
     }
