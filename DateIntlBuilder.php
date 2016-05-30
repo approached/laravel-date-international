@@ -1,4 +1,6 @@
-<?php namespace Approached\LaravelDateInternational;
+<?php
+
+namespace Approached\LaravelDateInternational;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
@@ -7,7 +9,6 @@ use IntlDateFormatter;
 
 class DateIntlBuilder
 {
-
     use Macroable;
     protected $langCode;
 
@@ -17,7 +18,7 @@ class DateIntlBuilder
         if (is_null($lang)) {
             $lang = App::getLocale();
         }
-        $this->langCode = $lang . '_' . strtoupper($lang);
+        $this->langCode = $lang.'_'.strtoupper($lang);
     }
 
     public function date($type, Carbon $carbon)
@@ -29,20 +30,20 @@ class DateIntlBuilder
 
     private function getType($type)
     {
-        $types = array(
-            'short' => IntlDateFormatter::SHORT,
-            'medium' => IntlDateFormatter::MEDIUM,
-            'long' => IntlDateFormatter::LONG,
-            'full' => IntlDateFormatter::FULL,
-            'gregorian' => IntlDateFormatter::GREGORIAN,
-            'traditional' => IntlDateFormatter::TRADITIONAL
-        );
+        $types = [
+            'short'       => IntlDateFormatter::SHORT,
+            'medium'      => IntlDateFormatter::MEDIUM,
+            'long'        => IntlDateFormatter::LONG,
+            'full'        => IntlDateFormatter::FULL,
+            'gregorian'   => IntlDateFormatter::GREGORIAN,
+            'traditional' => IntlDateFormatter::TRADITIONAL,
+        ];
 
         if (isset($types[$type])) {
             return $types[$type];
         }
 
-        throw new \Exception($type . ' ... TYPE not found');
+        throw new \Exception($type.' ... TYPE not found');
     }
 
     public function time(Carbon $carbon, $withSeconds = false)
@@ -75,5 +76,4 @@ class DateIntlBuilder
 
         return $fmt->format($carbon->getTimestamp());
     }
-
 }
