@@ -1,10 +1,11 @@
-<?php namespace Approached\LaravelDateInternational;
+<?php
+
+namespace Approached\LaravelDateInternational;
 
 use Illuminate\Support\Facades\Facade;
 
 class DateIntlFacade extends Facade
 {
-
     /**
      * Get the registered name of the component.
      *
@@ -14,5 +15,4 @@ class DateIntlFacade extends Facade
     {
         return 'dateintl';
     }
-
 }

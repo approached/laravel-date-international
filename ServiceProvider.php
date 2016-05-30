@@ -1,10 +1,11 @@
-<?php namespace Approached\LaravelDateInternational;
+<?php
+
+namespace Approached\LaravelDateInternational;
 
 use Illuminate\Support\ServiceProvider as Provider;
 
 class ServiceProvider extends Provider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -42,7 +43,6 @@ class ServiceProvider extends Provider
      */
     public function provides()
     {
-        return array('dateintl');
+        return ['dateintl'];
     }
-
 }
