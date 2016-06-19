@@ -84,12 +84,18 @@ Full:
 jueves, 20 de agosto de 2015, 13:27:42 (with seconds)
 ```
 
+And many more... 
+You can look all available language packages with:
+```bash
+aptitude search language-pack-
+```
+
 ## Installation
 
 ### Php extension
 
 Install php international support:
-```
+```bash
 sudo apt-get install php5-intl 
 ```
 Check that this extension is included:
