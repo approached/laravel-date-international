@@ -5,8 +5,8 @@ namespace Approached\LaravelDateInternational;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Traits\Macroable;
-use IntlDateFormatter;
 use IntlCalendar;
+use IntlDateFormatter;
 
 class DateIntlBuilder
 {
@@ -53,7 +53,7 @@ class DateIntlBuilder
     {
         return IntlCalendar::createInstance(
             $carbon->tz,
-            $this->langCode . "@calendar=" . $calendar
+            $this->langCode.'@calendar='.$calendar
         );
     }
 
