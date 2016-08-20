@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Traits\Macroable;
 use IntlDateFormatter;
+use IntlCalendar;
 
 class DateIntlBuilder
 {
@@ -21,9 +22,11 @@ class DateIntlBuilder
         $this->langCode = $lang.'_'.strtoupper($lang);
     }
 
-    public function date($type, Carbon $carbon)
+    public function date($type, Carbon $carbon, $calendar = null)
     {
-        $fmt = new IntlDateFormatter($this->langCode, $this->getType($type), IntlDateFormatter::NONE, $carbon->tz);
+        $calendar = $this->getCalendar($carbon, $calendar);
+
+        $fmt = new IntlDateFormatter($this->langCode, $this->getType($type), IntlDateFormatter::NONE, $carbon->tz, $calendar);
 
         return $fmt->format($carbon->getTimestamp());
     }
@@ -46,9 +49,19 @@ class DateIntlBuilder
         throw new \Exception($type.' ... TYPE not found');
     }
 
-    public function time(Carbon $carbon, $withSeconds = false)
+    private function getCalendar(Carbon $carbon, String $calendar)
     {
-        $fmt = new IntlDateFormatter($this->langCode, IntlDateFormatter::NONE, $this->getTimeType($withSeconds), $carbon->tz);
+        return IntlCalendar::createInstance(
+            $carbon->tz,
+            $this->langCode . "@calendar=" . $calendar
+        );
+    }
+
+    public function time(Carbon $carbon, $withSeconds = false, $calendar = null)
+    {
+        $calendar = $this->getCalendar($carbon, $calendar);
+
+        $fmt = new IntlDateFormatter($this->langCode, IntlDateFormatter::NONE, $this->getTimeType($withSeconds), $carbon->tz, $calendar);
 
         return $fmt->format($carbon->getTimestamp());
     }
@@ -62,17 +75,22 @@ class DateIntlBuilder
         return IntlDateFormatter::SHORT;
     }
 
-    public function full($type, Carbon $carbon, $withSeconds = false)
+    public function full($type, Carbon $carbon, $withSeconds = false, $calendar = null)
     {
         $type = $this->getType($type);
-        $fmt = new IntlDateFormatter($this->langCode, $type, $this->getTimeType($withSeconds), $carbon->tz);
+
+        $calendar = $this->getCalendar($carbon, $calendar);
+
+        $fmt = new IntlDateFormatter($this->langCode, $type, $this->getTimeType($withSeconds), $carbon->tz, $calendar);
 
         return $fmt->format($carbon->getTimestamp());
     }
 
-    public function fullmix($dateType, $timeType, Carbon $carbon)
+    public function fullmix($dateType, $timeType, Carbon $carbon, $calendar = null)
     {
-        $fmt = new IntlDateFormatter($this->langCode, $this->getType($dateType), $this->getType($timeType), $carbon->tz);
+        $calendar = $this->getCalendar($carbon, $calendar);
+
+        $fmt = new IntlDateFormatter($this->langCode, $this->getType($dateType), $this->getType($timeType), $carbon->tz, $calendar);
 
         return $fmt->format($carbon->getTimestamp());
     }

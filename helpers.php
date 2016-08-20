@@ -10,9 +10,9 @@ if (!function_exists('dateintl_date')) {
      *
      * @return string
      */
-    function dateintl_date($type, $dateObject)
+    function dateintl_date($type, $dateObject, $calendar = null)
     {
-        return app('dateintl')->date($type, $dateObject);
+        return app('dateintl')->date($type, $dateObject, $calendar);
     }
 }
 
@@ -26,9 +26,9 @@ if (!function_exists('dateintl_time')) {
      *
      * @return string
      */
-    function dateintl_time($dateObject, $withSeconds = false)
+    function dateintl_time($dateObject, $withSeconds = false, $calendar = null)
     {
-        return app('dateintl')->time($dateObject, $withSeconds);
+        return app('dateintl')->time($dateObject, $withSeconds, $calendar);
     }
 }
 
@@ -42,9 +42,9 @@ if (!function_exists('dateintl_full')) {
      *
      * @return string
      */
-    function dateintl_full($type, $dateObject, $withSeconds = false)
+    function dateintl_full($type, $dateObject, $withSeconds = false, $calendar = null)
     {
-        return app('dateintl')->full($type, $dateObject, $withSeconds);
+        return app('dateintl')->full($type, $dateObject, $withSeconds, $calendar);
     }
 }
 
@@ -58,8 +58,8 @@ if (!function_exists('dateintl_fullmix')) {
      *
      * @return string
      */
-    function dateintl_fullmix($type, $dateObject)
+    function dateintl_fullmix($type, $dateObject, $calendar = null)
     {
-        return app('dateintl')->dateintl_fullmix($type, $dateObject);
+        return app('dateintl')->dateintl_fullmix($type, $dateObject, $calendar = null);
     }
 }
