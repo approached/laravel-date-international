@@ -124,22 +124,12 @@ composer require approached/laravel-date-international
 ```
 
 After updating composer, add the ServiceProvider to the providers array in config/app.php:
-
-Laravel 5.1:
 ```php
 Approached\LaravelDateInternational\ServiceProvider::class,
 
 and
 
 'Dateintl'=> Approached\LaravelDateInternational\DateIntlFacade::class,
-```
-Laravel 5.0:
-```php
-'Approached\LaravelDateInternational\ServiceProvider',
-
-and
-
-'Dateintl'=> 'Approached\LaravelDateInternational\DateIntlFacade',
 ```
 
 ## Usage
