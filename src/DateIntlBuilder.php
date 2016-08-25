@@ -52,7 +52,7 @@ class DateIntlBuilder
     private function getCalendar(Carbon $carbon, $calendar)
     {
         if (is_null($calendar)) {
-            return null;
+            return;
         }
 
         return IntlCalendar::createInstance(

@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('dateintl_date')) {
+if (! function_exists('dateintl_date')) {
 
     /**
      * Generate a international date string.
@@ -16,7 +16,7 @@ if (!function_exists('dateintl_date')) {
     }
 }
 
-if (!function_exists('dateintl_time')) {
+if (! function_exists('dateintl_time')) {
 
     /**
      * Generate a international date string.
@@ -32,7 +32,7 @@ if (!function_exists('dateintl_time')) {
     }
 }
 
-if (!function_exists('dateintl_full')) {
+if (! function_exists('dateintl_full')) {
 
     /**
      * Generate a international date string.
@@ -48,7 +48,7 @@ if (!function_exists('dateintl_full')) {
     }
 }
 
-if (!function_exists('dateintl_fullmix')) {
+if (! function_exists('dateintl_fullmix')) {
 
     /**
      * Generate a international date string.
