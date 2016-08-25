@@ -99,19 +99,19 @@ Install php international support:
 sudo apt-get install php5-intl 
 ```
 Check that this extension is included:
-```
+```bash
 php -m | grep intl
 ```
 
 ### Languages
 Install some languages:
-```
+```bash
 sudo apt-get install language-pack-de language-pack-en language-pack-es language-pack-it
 sudo locale-gen
 ```
 
 Check your available languages:
-```
+```bash
 locale -a
 ```
 Make sure that you have languages in format like this: de_DE
@@ -119,14 +119,14 @@ Make sure that you have languages in format like this: de_DE
 ### Laravel
 
 Laravel require this package with composer:
-```
+```bash
 composer require approached/laravel-date-international
 ```
 
 After updating composer, add the ServiceProvider to the providers array in config/app.php:
 
 Laravel 5.1:
-```
+```php
 Approached\LaravelDateInternational\ServiceProvider::class,
 
 and
@@ -134,7 +134,7 @@ and
 'Dateintl'=> Approached\LaravelDateInternational\DateIntlFacade::class,
 ```
 Laravel 5.0:
-```
+```php
 'Approached\LaravelDateInternational\ServiceProvider',
 
 and
@@ -145,7 +145,7 @@ and
 ## Usage
 
 **Blade:**
-```
+```php
     Date:<br>
     {{ dateintl_date('short', $date) }}<br>
     {{ dateintl_date('medium', $date) }}<br>
@@ -164,9 +164,26 @@ and
 ```
 
 **PHP:**
-```
+```php
 $str = Dateintl::full('short', $date);
 ```
+
+**Calendar:**
+With the last parameter you can control which *calendar* you want to use:
+```php
+$str = Dateintl::full('short', $date, 'japanese');
+```
+
+Could be these values :
+- persian
+- japanese
+- buddhist
+- chinese
+- indian
+- islamic
+- hebrew
+- coptic
+- ethiopic
 
 ## License
 MIT
