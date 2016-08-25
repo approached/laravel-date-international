@@ -162,7 +162,7 @@ $str = Dateintl::full('short', $date);
 
 With the last parameter you can control which *calendar* you want to use:
 ```php
-$str = Dateintl::full('short', $date, 'japanese');
+$str = Dateintl::full('short', $date, false, 'japanese');
 ```
 
 Could be these values :
