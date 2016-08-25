@@ -49,8 +49,12 @@ class DateIntlBuilder
         throw new \Exception($type.' ... TYPE not found');
     }
 
-    private function getCalendar(Carbon $carbon, String $calendar)
+    private function getCalendar(Carbon $carbon, $calendar)
     {
+        if (is_null($calendar)) {
+            return null;
+        }
+
         return IntlCalendar::createInstance(
             $carbon->tz,
             $this->langCode.'@calendar='.$calendar
