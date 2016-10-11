@@ -63,3 +63,19 @@ if (! function_exists('dateintl_fullmix')) {
         return app('dateintl')->dateintl_fullmix($type, $dateObject, $calendar = null);
     }
 }
+
+if (! function_exists('dateintl_format')) {
+
+    /**
+     * Generate a international date string.
+     *
+     * @param $format
+     * @param $dateObject
+     *
+     * @return string
+     */
+    function dateintl_format($format, $dateObject, $calendar = null)
+    {
+        return app('dateintl')->dateintl_format($format, $dateObject, $calendar = null);
+    }
+}
