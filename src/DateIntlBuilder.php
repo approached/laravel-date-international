@@ -101,19 +101,19 @@ class DateIntlBuilder
 
     public function pattern($pattern, Carbon $carbon, $calendar = null)
     {
-      $type = $this->getType('full');
+        $type = $this->getType('full');
 
-      $calendar = $this->getCalendar($carbon, $calendar);
+        $calendar = $this->getCalendar($carbon, $calendar);
 
-      $fmt = new IntlDateFormatter($this->langCode, $type, $this->getTimeType(false), $carbon->tz, $calendar);
+        $fmt = new IntlDateFormatter($this->langCode, $type, $this->getTimeType(false), $carbon->tz, $calendar);
 
-      $fmt->setPattern($pattern);
+        $fmt->setPattern($pattern);
 
-      return $fmt->format($carbon->getTimestamp());
+        return $fmt->format($carbon->getTimestamp());
     }
 
     public function format($pattern, Carbon $carbon, $calendar = null)
     {
-      return $this->pattern($pattern, $carbon, $calendar);
+        return $this->pattern($pattern, $carbon, $calendar);
     }
 }
