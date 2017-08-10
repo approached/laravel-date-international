@@ -60,7 +60,7 @@ if (! function_exists('dateintl_fullmix')) {
      */
     function dateintl_fullmix($type, $dateObject, $calendar = null)
     {
-        return app('dateintl')->dateintl_fullmix($type, $dateObject, $calendar = null);
+        return app('dateintl')->fullmix($type, $dateObject, $calendar = null);
     }
 }
 
@@ -76,6 +76,7 @@ if (! function_exists('dateintl_format')) {
      */
     function dateintl_format($format, $dateObject, $calendar = null)
     {
-        return app('dateintl')->dateintl_format($format, $dateObject, $calendar = null);
+        return app('dateintl')->format($format, $dateObject, $calendar = null);
     }
 }
+
