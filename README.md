@@ -4,7 +4,7 @@
 [![Latest Stable Version](https://poser.pugx.org/approached/laravel-date-international/v/stable)](https://packagist.org/packages/approached/laravel-date-international)
 [![Total Downloads](https://poser.pugx.org/approached/laravel-date-international/downloads)](https://packagist.org/packages/approached/laravel-date-international)
 
-With this package you can get easy formated date sting in your language.
+With this package you can get easy formated date string in your language.
 
 ## Demo
 
@@ -83,27 +83,17 @@ Full:
 20 de agosto de 2015, 13:27
 jueves, 20 de agosto de 2015, 13:27:42 (with seconds)
 ```
-
 And many more... 
+
+## Installation
+
+### Languages
+
 You can look all available language packages with:
 ```bash
 aptitude search language-pack-
 ```
 
-## Installation
-
-### Php extension
-
-Install php international support:
-```bash
-sudo apt-get install php5-intl 
-```
-Check that this extension is included:
-```bash
-php -m | grep intl
-```
-
-### Languages
 Install some languages:
 ```bash
 sudo apt-get install language-pack-de language-pack-en language-pack-es language-pack-it
@@ -115,6 +105,17 @@ Check your available languages:
 locale -a
 ```
 Make sure that you have languages in format like this: de_DE
+
+### Php extension
+
+Install php international support:
+```bash
+sudo apt-get install php-intl 
+```
+Check that this extension is included:
+```bash
+php -m | grep intl
+```
 
 ### Laravel
 
